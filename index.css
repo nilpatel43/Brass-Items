@@ -1,0 +1,434 @@
+/* --- ROOT VARIABLES --- */
+/* These are global settings. By using variables, you can change one color 
+   here and it will update throughout the entire website automatically. */
+:root {
+    --primary-gold: rgb(197, 160, 89);
+    --dark-gold: rgb(158, 126, 56);
+    --text-dark: rgb(51, 51, 51);
+    --bg-light: rgb(249, 249, 249);
+    --white: rgb(255, 255, 255);
+    --black: rgb(26, 26, 26);
+    --dark-black: rgba(18, 18, 18, 1);
+    --header-height: 90px;
+}
+
+/* --- BODY SETTINGS --- */
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: var(--header-height);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- HEADER --- */
+header {
+    background-color: var(--black);
+    color: var(--primary-gold);
+    height: var(--header-height);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    /* Reduced padding slightly for mobile */
+    box-sizing: border-box;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Group Logo and Hamburger together */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Hamburger Menu Icon (Hidden on Desktop) */
+.menu-toggle {
+    display: none;
+    /* Desktop me nahi dikhega */
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--primary-gold);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 2px solid var(--primary-gold);
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+
+/* --- TOP NAVBAR --- */
+.top-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.top-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.top-nav a:hover {
+    color: var(--primary-gold);
+}
+
+.top-nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--primary-gold);
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.top-nav a:hover::after {
+    width: 100%;
+}
+
+/* --- SEARCH BOX --- */
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-box {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid var(--primary-gold);
+    background: transparent;
+    color: var(--white);
+    width: 200px;
+    outline: none;
+    font-size: 13px;
+}
+
+.search-box::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cta-button {
+    background-color: var(--primary-gold);
+    color: var(--black);
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.cta-button:hover {
+    background-color: var(--white);
+    color: var(--dark-gold);
+}
+
+/* --- SIDEBAR --- */
+.side {
+    background: var(--dark-black);
+    position: fixed;
+    top: var(--header-height);
+    bottom: 0;
+    width: 250px;
+    display: flex;
+    font-weight: bold;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    z-index: 900;
+    transition: left 0.3s ease-in-out;
+    /* Smooth slide animation */
+    left: 0;
+    /* Default open on desktop */
+}
+
+.side a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 18px 25px;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.side a:hover {
+    background-color: var(--primary-gold);
+    color: var(--black);
+    padding-left: 35px;
+}
+
+/* Close button inside sidebar (Mobile Only) */
+.close-btn {
+    display: none;
+    color: var(--white);
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+/* --- MAIN CONTENT --- */
+.continent {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1577032229267-347f3b890989?q=80&w=1600&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    min-height: calc(100vh - var(--header-height));
+    margin-left: 250px;
+    /* Space for sidebar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    flex: 1;
+    transition: margin-left 0.3s ease;
+}
+
+.welcome-text {
+    color: var(--primary-gold);
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.main h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: var(--primary-gold);
+    line-height: 1.2;
+}
+
+.main p {
+    font-size: 17px;
+    font-weight: bold;
+    max-width: 600px;
+    margin: 0 auto 35px auto;
+    padding: 0 20px;
+}
+
+.btn-gold {
+    background-color: var(--primary-gold);
+    color: var(--black);
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: 0.3s;
+    display: inline-block;
+    border: 2px solid var(--primary-gold);
+}
+
+.btn-gold:hover {
+    background-color: transparent;
+    color: var(--primary-gold);
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--black);
+    color: #ccc;
+    margin-left: 250px;
+    border-top: 3px solid var(--primary-gold);
+    transition: margin-left 0.3s ease;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 50px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-col h3 {
+    color: var(--primary-gold);
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-col h3::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--primary-gold);
+    margin-top: 5px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--primary-gold);
+    padding-left: 5px;
+}
+
+.contact-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.contact-icon {
+    color: var(--primary-gold);
+    font-size: 16px;
+    margin-top: 3px;
+}
+
+.SP {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    margin: 0;
+    border-top: 1px solid #333;
+}
+
+.SP strong {
+    color: var(--primary-gold);
+}
+
+/* --- RESPONSIVE DESIGN (MOBILE & TABLET) --- */
+
+/* Tablet (Hide Top Nav, Show Search & CTA) */
+@media (max-width: 1100px) {
+    .top-nav {
+        display: none;
+    }
+}
+
+/* Mobile (Phones) */
+@media (max-width: 768px) {
+
+    /* Show Hamburger Menu */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Adjust Header layout for mobile */
+    header {
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 16px;
+        /* Smaller logo */
+        padding: 3px 8px;
+    }
+
+    .search-container {
+        display: none;
+        /* Hide search box on very small screens to save space */
+    }
+
+    /* Sidebar logic for Mobile */
+    .side {
+        left: -260px;
+        /* Hide off-screen by default */
+        width: 250px;
+        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Class to open sidebar */
+    .side.active {
+        left: 0;
+    }
+
+    /* Main Content adjustments */
+    .continent {
+        margin-left: 0;
+        /* Remove side margin */
+    }
+
+    .main h1 {
+        font-size: 32px;
+        /* Smaller Heading */
+    }
+
+    footer {
+        margin-left: 0;
+        /* Remove footer margin */
+    }
+
+    .footer-container {
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .footer-col h3::after {
+        margin: 5px auto 0 auto;
+        /* Center underline */
+    }
+
+    .contact-row {
+        justify-content: center;
+    }
+
+    .SP {
+        font-size: 12px;
+    }
+}

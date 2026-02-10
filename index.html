@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khodiyal Brass</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="menu-toggle" onclick="toggleSidebar()">&#9776;</div>
+            <div class="logo">Khodiyal Brass</div>
+        </div>
+
+        <nav class="top-nav">
+            <a href="products.html">Products</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="Search Items...">
+        </div>
+
+        <div class="header-right">
+            <a href="contact.html" class="cta-button">Call Us</a>
+        </div>
+    </header>
+
+    <section>
+        <div class="side" id="sidebar">
+            <a href="index.html" onclick="toggleSidebar()">Home</a>
+            <a href="horse.html" onclick="toggleSidebar()">Brass Show Piece Horses</a>
+            <a href="bottle.html" onclick="toggleSidebar()">Brass Bottles</a>
+            <a href="lamp.html" onclick="toggleSidebar()">Brass Lamps</a>
+            <a href="lock.html" onclick="toggleSidebar()">Brass Locks</a>
+            <a href="spoon.html" onclick="toggleSidebar()">Brass Pooja Spoons</a>
+            <a href="dhoop.html" onclick="toggleSidebar()">Brass Dhoop Danis</a>
+        </div>
+    </section>
+
+    <section class="continent">
+        <div id="overlay" onclick="toggleSidebar()"
+            style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:899;">
+        </div>
+
+        <div class="main">
+            <span class="welcome-text">Welcome to Khodiyal Industries</span>
+
+            <h1>Quality Brass Craftsmanship</h1>
+            <p>Manufacturer & Supplier of Premium Brass Components, Fittings, and Decorative Items.</p>
+
+            <a href="products.html" class="btn-gold">View Collection</a>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>Khodiyal Brass Industries is a leading manufacturer in Jamnagar, specializing in high-quality brass
+                    components, decorative items, and precision fittings since 2024.</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">All Products</a></li>
+                    <li><a href="about.html">About Company</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <div class="contact-row">
+                    <span class="contact-icon">📍</span>
+                    <span>GIDC Phase-2, Dared,<br>Jamnagar, Gujarat - 361004</span>
+                </div>
+                <div class="contact-row">
+                    <span class="contact-icon">📞</span>
+                    <span>+91 8141384325</span>
+                </div>
+                <div class="contact-row">
+                    <span class="contact-icon">✉️</span>
+                    <span>info@khodiyalbrass.com</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="SP">&copy; 2026 <strong>Khodiyal Brass Items</strong>. All Rights Reserved. | Designed with precision.
+        </p>
+
+    </footer>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var overlay = document.getElementById("overlay");
+
+            // Toggle the 'active' class
+            sidebar.classList.toggle("active");
+
+            // Toggle overlay visibility
+            if (sidebar.classList.contains("active")) {
+                overlay.style.display = "block";
+            } else {
+                overlay.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
